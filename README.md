@@ -4,7 +4,6 @@
 ## Project Idea
 This project is a Java-based application that analyzes a given number series and detects whether it follows a reverse difference pattern. If the pattern exists, it predicts the next number in the series.
 
----
 
 ## Formulas Used
 
@@ -18,7 +17,6 @@ This project is a Java-based application that analyzes a given number series and
   nextDiff = d_last + constant  
   nextValue = a_last + nextDiff  
 
----
 
 ## Techniques Used
 
@@ -28,7 +26,6 @@ This project is a Java-based application that analyzes a given number series and
 - Input Handling  
 - Edge Case Handling  
 
----
 
 ## Features of the Project
 
@@ -37,7 +34,6 @@ This project is a Java-based application that analyzes a given number series and
 - Calculate next number  
 - Display intermediate steps (differences)  
 
----
 
 ## Technologies Used
 
