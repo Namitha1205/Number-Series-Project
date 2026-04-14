@@ -93,3 +93,49 @@ To develop a simple system that demonstrates basic operations of a library using
 
 - Java  
 - Eclipse IDE  
+
+---
+
+
+# ATM Management System (Java)
+
+## Project Idea
+This project is a Java-based ATM Management System that simulates basic banking operations such as checking balance, depositing money, and withdrawing money using a console-based interface.
+
+## Objective
+To implement a simple ATM system using Java that demonstrates real-world banking operations and core programming concepts.
+
+## Features
+
+### Core Features
+- Check account balance  
+- Deposit money  
+- Withdraw money  
+- Input validation for transactions  
+- Menu-driven interface  
+
+## Concepts Used
+
+- Object-Oriented Programming (OOP)  
+- Classes and Objects  
+- Conditional Statements  
+- Loops (do-while)  
+- User Input Handling using Scanner  
+
+## Project Structure
+
+- **ATM Class**
+  - Handles:
+    - Balance checking  
+    - Deposit operation  
+    - Withdrawal operation  
+
+- **ATM_management Class**
+  - Contains main method  
+  - Menu-driven system for user interaction  
+
+## Technologies Used
+
+- Java  
+- Eclipse IDE  
+
