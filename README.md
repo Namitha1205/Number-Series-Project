@@ -1,5 +1,5 @@
 #  Namitha1205 - Projects
-#  Reverse Difference Number Series Analyzer(Java)
+#  1.Reverse Difference Number Series Analyzer(Java)
 
 ## Project Idea
 This project is a Java-based application that analyzes a given number series and detects whether it follows a reverse difference pattern. If the pattern exists, it predicts the next number in the series.
@@ -44,7 +44,7 @@ This project is a Java-based application that analyzes a given number series and
 
 
 
-# Library Management System (Java)
+# 2.Library Management System (Java)
 
 ## Project Idea
 This project is a Java-based Library Management System that allows users to manage books efficiently using a console-based interface. It supports adding, viewing, issuing, and returning books.
@@ -97,7 +97,7 @@ To develop a simple system that demonstrates basic operations of a library using
 ---
 
 
-# ATM Management System (Java)
+# 3.ATM Management System (Java)
 
 ## Project Idea
 This project is a Java-based ATM Management System that simulates basic banking operations such as checking balance, depositing money, and withdrawing money using a console-based interface.
@@ -141,7 +141,7 @@ To implement a simple ATM system using Java that demonstrates real-world banking
 
 ---
 
-# Student Management System (Java)
+# 4.Student Management System (Java)
 
 ## Project Idea
 This project is a Java-based Student Management System that allows users to manage student records efficiently using a console-based interface. It supports adding, viewing, searching, updating, deleting, and analyzing student data.
@@ -207,7 +207,7 @@ To develop a system that manages student information and demonstrates core progr
 ---
 
 
-# Tic Tac Toe Game (Java)
+# 5.Tic Tac Toe Game (Java)
 
 ## Project Idea
 This project is a Java-based Tic Tac Toe game that allows two players to play against each other in a console-based interface. The game checks for a winner after each move and declares the result accordingly.
@@ -259,6 +259,84 @@ To develop a simple interactive game using Java that demonstrates logic building
 
 ## Technologies Used
 
+- Java  
+- Eclipse IDE  
+
+---
+
+
+# 6.Scientific Calculator (Java)
+
+## Project Idea
+This project is a Java-based Scientific Calculator that performs both basic and advanced mathematical operations using a console-based interface.
+
+## Objective
+To develop a calculator that demonstrates mathematical computations using Java's built-in Math functions and user interaction.
+
+## Features
+
+### Basic Operations
+- Addition  
+- Subtraction  
+- Multiplication  
+- Division  
+
+### Scientific Operations
+- Power (x^y)  
+- Square Root (√)  
+- Logarithm (log)  
+- Trigonometric Functions:
+  - Sine (sin)  
+  - Cosine (cos)  
+  - Tangent (tan)  
+
+## Concepts Used
+- Java Math class  
+- Switch-case statements  
+- Functions/Methods  
+- User Input using Scanner  
+- Conditional logic  
+
+## Technologies Used
+- Java  
+- Eclipse IDE  
+
+---
+
+
+# 7.Bus Reservation System (Java)
+
+## Project Idea
+This project is a Java-based Bus Reservation System that allows users to book, cancel, and view seat availability through a console-based interface.
+
+## Objective
+To simulate a real-world ticket booking system using Java and object-oriented programming concepts.
+
+## Features
+
+### Core Features
+- View seat availability  
+- Book seat  
+- Cancel booking  
+- View passenger details  
+- Seat status tracking  
+
+## Concepts Used
+- Object-Oriented Programming (OOP)  
+- Classes and Objects  
+- Arrays  
+- Loops and Conditional Statements  
+- User Input using Scanner  
+
+## Project Structure
+
+- **Passenger Class**
+  - Stores seat number and passenger name  
+
+- **BusReservationSystem Class**
+  - Handles booking, cancellation, and display operations  
+
+## Technologies Used
 - Java  
 - Eclipse IDE  
 
