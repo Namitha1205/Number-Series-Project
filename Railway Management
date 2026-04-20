@@ -1,0 +1,89 @@
+package RailwayManagement;
+import java.util.*;
+public class railwaymanagement
+{
+    static int totalSeats = 10;
+    static boolean[] seats = new boolean[totalSeats];
+    static Map<Integer, String> bookings = new HashMap<>();
+    static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        int choice;
+        do {
+            System.out.println("\n===== Railway Reservation System =====");
+            System.out.println("1. Book Ticket");
+            System.out.println("2. Cancel Ticket");
+            System.out.println("3. View Seats");
+            System.out.println("4. Show Bookings");
+            System.out.println("5. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    bookTicket();
+                    break;
+                case 2:
+                    cancelTicket();
+                    break;
+                case 3:
+                    viewSeats();
+                    break;
+                case 4:
+                    showBookings();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        } while (choice != 5);
+    }
+    // BOOK
+    static void bookTicket() {
+        System.out.print("Enter passenger name: ");
+        sc.nextLine(); // clear buffer
+        String name = sc.nextLine();
+        for (int i = 0; i < totalSeats; i++) {
+            if (!seats[i]) {
+                seats[i] = true;
+                bookings.put(i, name);
+                System.out.println("Ticket booked!");
+                System.out.println("Seat Number: " + (i + 1));
+                return;
+            }
+        }
+        System.out.println("No seats available!");
+    }
+    // CANCEL
+    static void cancelTicket() {
+        System.out.print("Enter seat number to cancel: ");
+        int seatNo = sc.nextInt() - 1;
+        if (seatNo >= 0 && seatNo < totalSeats && seats[seatNo]) {
+            seats[seatNo] = false;
+            bookings.remove(seatNo);
+            System.out.println("Seat cancelled successfully!");
+        } else {
+            System.out.println("Invalid seat number!");
+        }
+    }
+    // VIEW
+    static void viewSeats() {
+        System.out.println("\nSeat Status:");
+        for (int i = 0; i < totalSeats; i++) {
+            System.out.println("Seat " + (i + 1) + ": " +
+                    (seats[i] ? "Booked" : "Available"));
+        }
+    }
+    // SHOW BOOKINGS
+    static void showBookings() {
+        System.out.println("\nBookings:");
+        if (bookings.isEmpty()) {
+            System.out.println("No bookings yet");
+            return;
+        }
+        for (Map.Entry<Integer, String> entry : bookings.entrySet()) {
+            System.out.println("Seat " + (entry.getKey() + 1)
+                    + " - " + entry.getValue());
+        }
+    }
+}
