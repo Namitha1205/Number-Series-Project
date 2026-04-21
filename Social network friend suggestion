@@ -1,0 +1,120 @@
+import java.util.*;
+public class FriendSuggestionSystem {
+    static Map<String, List<String>> graph = new HashMap<>();
+    static Scanner sc = new Scanner(System.in);
+    // Add user
+    static void addUser(String user) {
+        graph.putIfAbsent(user, new ArrayList<>());
+    }
+    // Add friendship
+    static void addFriend(String u1, String u2) {
+        if (!graph.containsKey(u1) || !graph.containsKey(u2)) {
+            System.out.println("User not found!");
+            return;
+        }
+        graph.get(u1).add(u2);
+        graph.get(u2).add(u1);
+        System.out.println("Friendship added!");
+    }
+    // Suggest friends using BFS + mutual count
+    static void suggestFriends(String user) {
+        if (!graph.containsKey(user)) {
+            System.out.println("User not found!");
+            return;
+        }
+        Set<String> visited = new HashSet<>();
+        Queue<String> queue = new LinkedList<>();
+        Map<String, Integer> mutualCount = new HashMap<>();
+        visited.add(user);
+        queue.add(user);
+        while (!queue.isEmpty()) {
+            String current = queue.poll();
+            for (String friend : graph.get(current)) {
+                if (!visited.contains(friend)) {
+                    visited.add(friend);
+                    queue.add(friend);
+                    // skip direct friends
+                    if (!graph.get(user).contains(friend)) {
+                        // count mutual friends
+                        int count = 0;
+                        for (String f : graph.get(friend)) {
+                            if (graph.get(user).contains(f)) {
+                                count++;
+                            }
+                        }
+                        mutualCount.put(friend, count);
+                    }
+                }
+            }
+        }
+        // sort by mutual count (descending)
+        List<Map.Entry<String, Integer>> list =
+                new ArrayList<>(mutualCount.entrySet());
+
+        list.sort((a, b) -> b.getValue() - a.getValue());
+        System.out.println("\nSuggested friends for " + user + ":");
+        if (list.isEmpty()) {
+            System.out.println("No suggestions available");
+        } else {
+            for (Map.Entry<String, Integer> entry : list) {
+                System.out.println(entry.getKey() +
+                        " (" + entry.getValue() + " mutual friends)");
+            }
+        }
+    }
+    // Display graph
+    static void display() {
+        System.out.println("\nSocial Network:");
+        for (String user : graph.keySet()) {
+            System.out.println(user + " -> " + graph.get(user));
+        }
+    }
+    public static void main(String[] args) {
+        int choice;
+        do {
+            System.out.println("\n===== Social Network System =====");
+            System.out.println("1. Add User");
+            System.out.println("2. Add Friend");
+            System.out.println("3. Suggest Friends");
+            System.out.println("4. Display Network");
+            System.out.println("5. Exit");
+            System.out.print("Enter choice: ");
+            choice = sc.nextInt();
+            sc.nextLine(); // clear buffer
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter user name: ");
+                    String user = sc.nextLine();
+                    addUser(user);
+                    System.out.println("User added!");
+                    break;
+
+                case 2:
+                    System.out.print("Enter user1: ");
+                    String u1 = sc.nextLine();
+                    System.out.print("Enter user2: ");
+                    String u2 = sc.nextLine();
+                    addFriend(u1, u2);
+                    break;
+
+                case 3:
+                    System.out.print("Enter user: ");
+                    String u = sc.nextLine();
+                    suggestFriends(u);
+                    break;
+
+                case 4:
+                    display();
+                    break;
+
+                case 5:
+                    System.out.println("Exiting...");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice!");
+            }
+
+        } while (choice != 5);
+    }
+}
